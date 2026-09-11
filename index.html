@@ -3,114 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>July to November Calendars</title>
+    <title>Full Year Google Calendar View</title>
     <style>
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f9;
-            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
             padding: 20px;
         }
 
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 30px;
-        }
-
-        /* Grid layout for displaying calendars */
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .calendar-card {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-        }
-
-        .calendar-card h2 {
-            margin-top: 0;
-            margin-bottom: 15px;
-            font-size: 1.25rem;
-            color: #1a73e8;
-            text-align: center;
-        }
-
-        .calendar-card iframe {
+        .calendar-frame {
             width: 100%;
-            height: 450px;
+            max-width: 1200px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .calendar-header {
+            background-color: #1a73e8;
+            color: #ffffff;
+            padding: 16px 24px;
+            text-align: center;
+        }
+
+        .calendar-header h1 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 750px;
+            border: none;
+        }
+
+        .responsive-iframe {
+            width: 100%;
+            height: 100%;
             border: 0;
-            border-radius: 6px;
         }
     </style>
 </head>
 <body>
 
-    <h1>Schedule: July – November</h1>
-
-    <div class="calendar-grid">
-        
-        <!-- July Calendar -->
-        <div class="calendar-card">
-            <h2>July</h2>
-            <!-- Pass a date in July to initial date parameter: dates=20260701/20260731 -->
+    <div class="calendar-frame">
+        <div class="calendar-header">
+            <h1>Academic & Event Calendar — Full Year View</h1>
+        </div>
+        <div class="iframe-container">
+            <!-- Full Year Google Calendar Embed -->
             <iframe 
-                src="<https://calendar.google.com/calendar/embed?src=ph26resch14001%40iith.ac.in&ctz=Asia%2FKolkata>" 
+                class="responsive-iframe"
+                src="https://calendar.google.com/calendar/embed?mode=AGENDA&amp;dates=20260101%2F20261231&amp;src=ph26resch14001%40iith.ac.in&amp;ctz=Asia%2FKolkata" 
                 frameborder="0" 
-                scrolling="no">
+                scrolling="yes">
             </iframe>
         </div>
-
-        <!-- August Calendar -->
-        <div class="calendar-card">
-            <h2>August</h2>
-            <iframe 
-                src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showTitle=0&amp;dates=20260801%2F20260831&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;ctz=America%2FNew_York" 
-                frameborder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
-
-        <!-- September Calendar -->
-        <div class="calendar-card">
-            <h2>September</h2>
-            <iframe 
-                src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showTitle=0&amp;dates=20260901%2F20260930&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;ctz=America%2FNew_York" 
-                frameborder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
-
-        <!-- October Calendar -->
-        <div class="calendar-card">
-            <h2>October</h2>
-            <iframe 
-                src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showTitle=0&amp;dates=20261001%2F20261031&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;ctz=America%2FNew_York" 
-                frameborder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
-
-        <!-- November Calendar -->
-        <div class="calendar-card">
-            <h2>November</h2>
-            <iframe 
-                src="https://calendar.google.com/calendar/embed?mode=MONTH&amp;showTitle=0&amp;dates=20261101%2F20261130&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;ctz=America%2FNew_York" 
-                frameborder="0" 
-                scrolling="no">
-            </iframe>
-        </div>
-
     </div>
 
 </body>
